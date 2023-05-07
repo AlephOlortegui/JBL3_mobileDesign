@@ -1,0 +1,84 @@
+.footer{
+    background-color: $dark-clr;
+    color: $white-clr;
+}
+
+.f_menu_item{
+    position: relative;
+
+    &.live_chat{
+        display: none;
+    }
+
+    &.social{
+        ul{
+            text-align: center;
+            li{
+                display: inline-block;
+                margin: 0 1rem;
+            }
+        }
+    }
+
+    &_head{
+        @include flexConfig(space-between);
+        padding: 0.8em 0;
+        cursor: pointer;
+        border-bottom: 1px solid $lightgray-clr;
+    }
+
+    .plus{
+        display: grid;
+        place-items: center;
+        position: relative;
+        div{
+            @include dimension(14px, 2px);
+            background-color: $white-clr;
+            position: absolute;
+            right: 0;
+        }
+
+        .l1{
+            transform: rotate(90deg);
+            transition: $transition;
+        }
+    }
+
+    h4{
+        text-transform: capitalize;
+        font-size: .9rem;
+    }
+    ul{
+        list-style: none;
+        display: none;
+    }
+        // JS animation toggle class
+        &_head.active {
+            border-bottom: none;
+        }
+        &_head.active + ul{
+            display: block;
+        }
+        &_head.active .plus .l1{
+            transform: rotate(360deg);
+        }
+
+    li{
+        text-transform: capitalize;
+        padding: 0.6em 0.7em;
+        font-size: .8rem;
+        cursor: pointer;
+
+        &:hover{
+            color: $orange-clr;
+        }
+    }
+}
+
+.f_rights{
+    margin-top: 2em;
+
+    p{
+        text-align: center;
+    }
+}

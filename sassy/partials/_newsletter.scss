@@ -1,0 +1,44 @@
+.newsletter{
+    padding: 1em; //for mobile first
+    //Overlapping
+    position: relative;
+    width: 80%;
+    margin: -4rem auto;
+    border-radius: .3em;
+    
+    background-color: $lightgray-clr;
+    @include flexConfig(space-around);
+    flex-direction: column;
+
+    h2{
+        margin: 1rem;
+        font-size: 1.2rem;
+    }
+
+    #email{
+        // @include dimension(200px, 2rem);
+        width: 100%;
+        margin-right: 0;
+        // border-radius: 10px 0 0 10px;
+        border-radius: 10px;
+        border: 1px solid #7a7a7a;
+        // border-right: 0;
+        outline: none;
+        padding: 1.25em .9em;
+        margin-bottom: 1rem;
+    }
+
+    #submit{
+        display: block;
+        width: 100%;
+        // margin-left: -6px;
+        padding: .75em .9em;
+        border:none;
+        // border-radius: 0 10px 10px 0;
+        border-radius: 10px;
+        outline: none;
+        color: $white-clr;
+        background-color: $orange-clr;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,97 @@
+.start_chat{
+    position: fixed;
+    bottom: 20px;
+    right: 2%;
+    z-index: 5;
+    //Js
+    transition: $transition;
+    // transition-delay: .3s;
+}
+
+button.chat_btn{
+    padding: .7rem .9rem;
+    border: 1px solid $orange-clr;
+    // topleft topright downright downleft
+    border-radius: 20px 10px 0 20px;
+    background-color: $orange-clr;
+    color: $white-clr;
+    cursor: pointer;
+    font-size: 1.2rem;
+    
+    span{
+        font-size: .9rem;
+    }
+}
+
+.chat_box{
+    position: fixed;
+    bottom: 20px;
+    right: 2%;
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    background: $white-clr;
+    overflow: hidden;
+
+    //Set initial position
+    z-index: -1;
+    opacity: 0;
+    transition: $transition;
+    // transition-delay: .2s;
+
+    .chat_header{
+        padding: .5em 1em;
+        position: relative;
+        text-align: center;
+        background-color: $orange-clr;
+        color: $white-clr;
+        h1{
+            font-size: 1rem;
+        }
+        button{
+            position: absolute;
+            right: 6%;
+            top: 12px;
+            outline: none;
+            border: none;
+            color: $white-clr;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+    }
+
+    .chat_inputs{
+        padding: 1em;
+        label{
+            display: block;
+            margin-bottom: 1rem;
+        }
+        input {
+            //default inline-block
+            width: 100%;
+            padding: 0.6em 0.7em;
+            margin-bottom: .5rem;
+        }
+    }
+
+    #chat_form{
+        footer{
+            text-align: right;
+            padding: 1em;
+            box-shadow: $shadow;
+            button{
+                font-size: .8rem;
+            }
+        }
+    }
+}
+
+//Js animation
+.start_chat.active{
+    opacity: 0;
+}
+.chat_box.active{
+    z-index: 9;
+    opacity: 1;
+}

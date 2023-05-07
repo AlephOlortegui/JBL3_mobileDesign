@@ -1,0 +1,98 @@
+.main_header{
+    @include flexConfig(center);
+    box-shadow: $shadow;
+    padding: .5em 2em;
+    position: relative;
+
+    .logo img{
+        width: 3em;
+    }
+}
+
+.nav{
+    position: absolute;
+    top: 10vh;
+    z-index: 1;
+    background-color: $dark-clr;
+    @include dimension(100%,90vh);
+
+    //initial position
+    right: -100%;
+    opacity: 0;
+    transition: $transition;
+    //toggle active class for the nav
+    &.active{
+        right: 0;
+        opacity: 1;
+    }
+
+
+    ul{
+        //for testing purposes let me give it a bg color of X and this is the inicial dimension of the ul // background-color: tan;
+        @include flexConfig(space-around);
+        flex-direction: column;
+        height: 100%;
+
+        li{
+            //here as well BG color // background-color: aqua;
+            list-style: none;
+            margin: 0 1em;
+            @include dimension(100%,100%);
+
+            //Initial values
+            opacity: 0;
+            transform: translateX(80px);
+            transition: $transition;
+
+            a{
+                //as well as here bg color // background-color: antiquewhite;
+                color: $lightgray-clr;
+                text-decoration: none;
+                @include flexConfig(center);
+                @include dimension(100%,100%);
+                font-size: 1.5em;
+                font-weight: 600;
+
+                &:hover{
+                    background-color: $gray-clr;
+                }
+            }
+        }
+
+        @keyframes showLi {
+            from{opacity: 0; transform: translateX(80px);}
+            to{opacity: 1; transform: translateX(0px);}
+        }
+
+    }
+}
+
+.burger{
+    position: absolute;
+    top: 2.8vh;
+    right: 8vw;
+    cursor: pointer;
+
+    div{
+        @include dimension(24px,3px);
+        background-color: $gray-clr;
+        margin: 5px;
+        transition: $transition;
+    }
+
+    &:hover div{
+        background-color: $orange-clr;
+    }
+
+    // active toggle class When the burger ‘&’ has the class active I want to target line #1 etc
+    &.active .l1{
+        transform: rotate(-45deg) translate(-5px,6px);
+    }
+    &.active .l2{
+        opacity: 0;
+    }
+    &.active .l3{
+        transform: rotate(45deg) translate(-5px,-6px);
+    }
+
+}
